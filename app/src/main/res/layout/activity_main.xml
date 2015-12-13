@@ -3,9 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data class="MainActivityBinder">
+
         <variable
             name="user"
             type="com.ripzery.databind.User"/>
+
+        <variable
+            name="handler"
+            type="com.ripzery.databind.DataBindClick"/>
     </data>
 
     <LinearLayout
@@ -47,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:onClick="@{handler.onImageClicked}"
             app:roop="@{user.image}"
             app:placeHolder="@{@drawable/ic_launcher}"
             />

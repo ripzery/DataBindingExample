@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
         final MainActivityBinder mainActivityBinder = DataBindingUtil.setContentView(this, R.layout.activity_main);
         final User user = new User("Phuchit", "Oneplus2", "2027", "http://weknowyourdreams.com/images/dog/dog-07.jpg");
+
         mainActivityBinder.setUser(user);
+        mainActivityBinder.setHandler(new DataBindClick());
 
         new Handler().postDelayed(new Runnable() {
             @Override public void run() {
