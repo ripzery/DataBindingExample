@@ -1,13 +1,10 @@
 package com.ripzery.databind;
 
 import android.databinding.DataBindingUtil;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.ImageView;
 import com.ripzery.databind.databinding.MainActivityBinder;
-import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +24,5 @@ public class MainActivity extends AppCompatActivity {
                 user.setImage("https://www.petfinder.com/wp-content/uploads/2012/11/140272627-grooming-needs-senior-cat-632x475.jpg");
             }
         }, 3000);
-
     }
 }

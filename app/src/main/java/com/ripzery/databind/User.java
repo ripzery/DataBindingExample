@@ -3,10 +3,10 @@ package com.ripzery.databind;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
-import com.ripzery.databind.BR;
 
 /**
  * Created by Euro on 12/11/15 AD.
@@ -47,28 +47,29 @@ public class User extends BaseObservable{
 
     public void setImage(String image) {
         this.image = image;
-        notifyPropertyChanged(BR.image);
+        notifyPropertyChanged(com.ripzery.databind.BR.image);
     }
 
     public void setYear(String year) {
         this.year = year;
-        notifyPropertyChanged(BR.year);
+        notifyPropertyChanged(com.ripzery.databind.BR.year);
     }
 
     public void setProduct(String product) {
         this.product = product;
-        notifyPropertyChanged(BR.product);
+        notifyPropertyChanged(com.ripzery.databind.BR.product);
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-        notifyPropertyChanged(BR.firstName);
+        notifyPropertyChanged(com.ripzery.databind.BR.firstName);
     }
 
-    @BindingAdapter({"android:src"})
-    public static void setImageUrl(ImageView view, String url){
+    @BindingAdapter({"app:roop","app:placeHolder"})
+    public static void setImageUrl(ImageView view, String url, Drawable placeHolder){
         Picasso.with(view.getContext())
             .load(url)
+            .placeholder(placeHolder)
             .centerCrop()
             .resize(250, 250)
             .into(view);
