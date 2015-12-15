@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data class="MainActivityBinder">
-
         <variable
             name="user"
             type="com.ripzery.databind.User"/>
@@ -46,6 +45,13 @@
             android:layout_marginTop="16dp"
             android:text="@{user.year}"
             />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:date="@{user.date}" />
 
         <ImageView
             android:id="@+id/tvImage"

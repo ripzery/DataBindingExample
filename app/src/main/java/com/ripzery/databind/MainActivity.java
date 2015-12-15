@@ -4,16 +4,20 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import com.ripzery.databind.databinding.MainActivityBinder;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         final MainActivityBinder mainActivityBinder = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        final User user = new User("Phuchit", "Oneplus2", "2027", "http://weknowyourdreams.com/images/dog/dog-07.jpg");
+        //Log.d(TAG, "onCreate: " + Calendar.getInstance().getTime().toString());
+        final User user = new User("Phuchit", "Oneplus2", "2027", Calendar.getInstance().getTime(), "http://weknowyourdreams.com/images/dog/dog-07.jpg");
 
         mainActivityBinder.setUser(user);
         mainActivityBinder.setHandler(new DataBindClick());
